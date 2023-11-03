@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="CALCULATOR.css">
+</head>
+<body>
+  <div class="calculator">
+    <p>CALCULATOR</p>
+    <input type="text" id="display" disabled>
+    <div class="button-container">
+      <div class="button" onclick="appendToDisplay('7')">7</div>
+      <div class="button" onclick="appendToDisplay('8')">8</div>
+      <div class="button" onclick="appendToDisplay('9')">9</div>
+      <div class="button" onclick="clearDisplay()">C</div>
+      <div class="button" onclick="appendToDisplay('4')">4</div>
+      <div class="button" onclick="appendToDisplay('5')">5</div>
+      <div class="button" onclick="appendToDisplay('6')">6</div>
+      <div class="button" onclick="appendToDisplay('+')">+</div>
+      <div class="button" onclick="appendToDisplay('1')">1</div>
+      <div class="button" onclick="appendToDisplay('2')">2</div>
+      <div class="button" onclick="appendToDisplay('3')">3</div>
+      <div class="button" onclick="appendToDisplay('-')">-</div>
+      <div class="button" onclick="appendToDisplay('0')">0</div>
+      <div class="button" onclick="appendToDisplay('*')">x</div>
+      <div class="button" onclick="appendToDisplay('/')">/</div>
+      <div class="button" onclick="calculateResult()">=</div>
+      
+    </div>
+  </div>
+
+  <script>
+    function appendToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculateResult() {
+      try {
+        document.getElementById('display').value = eval(document.getElementById('display').value);
+      } catch (e) {
+        document.getElementById('display').value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
